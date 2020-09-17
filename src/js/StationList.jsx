@@ -40,7 +40,7 @@ function StationList() {
     }, [update]);
 
     return <>
-        <StatusBar status={fetchStatus} onRefresh={update}/>
+        <StatusBar status={fetchStatus} rows={Object.keys(stations).length} onRefresh={update}/>
         {Object.entries(stations).map(([id, station]) => <Station key={id} {...station}/>)}
     </>;
 }
